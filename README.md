@@ -1,2 +1,79 @@
 # Taller_Docker
 Taller de aplicación Cliente-Servidor en Docker
+
+## Descripción
+
+Este taller tiene como objetivo enseñar la creación y contenerización de una aplicación Cliente-Servidor completa utilizando tecnologías modernas de desarrollo web y Docker.
+
+## Tecnologías Utilizadas
+
+- **⚛️ Frontend**: Next.js - Framework de React para el desarrollo de la interfaz de usuario
+- **🚀 Backend**: Express.js - Framework de Node.js para la creación de la API REST
+- **🗄️ Base de Datos**: MySQL - Sistema de gestión de base de datos relacional
+- **🐳 Contenerización**: Docker - Para empaquetar y desplegar la aplicación
+- **📦 Registro**: Docker Hub - Para almacenar y distribuir las imágenes de contenedores
+
+## Prerrequisitos
+
+### Instalaciones Necesarias
+
+1. **Node.js**: [Descargar Node.js](https://nodejs.org/en/download)
+2. **Docker Engine**: [Instalar Docker Engine](https://docs.docker.com/engine/install/)
+3. **Docker Desktop**: [Instalar Docker Desktop](https://docs.docker.com/desktop/setup/install/linux/)
+
+### Comandos de Instalación
+
+```bash
+# Crear proyecto Next.js
+npx create-next-app@latest mi-frontend
+
+# Instalar Express.js en un nuevo proyecto
+npm init -y
+npm install express
+```
+
+## Comandos Esenciales de Docker
+
+```bash
+# Gestión de contenedores
+docker start <container_name>     # Iniciar contenedor
+docker ps -a                      # Listar todos los contenedores
+docker stop <container_name>      # Detener contenedor
+docker rm <container_name>        # Eliminar contenedor
+
+# Gestión de imágenes
+docker images                     # Listar imágenes
+docker rmi <image_name>          # Eliminar imagen
+
+# Gestión de volúmenes
+docker volume ls                  # Listar volúmenes
+
+# Docker Compose
+docker compose up                 # Levantar servicios
+docker compose down              # Detener servicios
+```
+
+## Objetivos
+
+- Desarrollar una aplicación CRUD (Create, Read, Update, Delete) completa
+- Implementar una arquitectura Cliente-Servidor bien estructurada
+- Contenerizar cada componente de la aplicación usando Docker
+- Crear archivos Dockerfile para cada servicio
+- Configurar Docker Compose para orquestar múltiples contenedores
+- Publicar las imágenes en Docker Hub para su distribución
+
+## Estructura del Proyecto
+
+El taller cubrirá la creación de:
+- Una aplicación frontend interactiva con Next.js
+- Una API RESTful robusta con Express.js
+- Una base de datos MySQL configurada
+- Contenedores Docker para cada componente
+- Configuración de red entre contenedores
+- Deployment y publicación en Docker Hub
+
+## Documentación Oficial
+
+- 📚 [Documentación de Docker](https://docs.docker.com/manuals/)
+- 📗 [Documentación de Node.js](https://nodejs.org/docs/latest/api/)
+- ⚛️ [Documentación de Next.js](https://nextjs.org/docs)
