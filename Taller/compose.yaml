@@ -11,8 +11,8 @@ services:
       - MYSQL_DATABASE=taller
     volumes:
       - mysql-data:/var/lib/mysql
-      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
-      - ./mysql/mysql-config/auth.cnf:/etc/mysql/conf.d/auth.cnf
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./database/mysql-config/auth.cnf:/etc/mysql/conf.d/auth.cnf
     command:
       --default-authentication-plugin=mysql_native_password
     healthcheck:
