@@ -24,7 +24,7 @@ services:
     build: ./api
     container_name: API_TALLER
     ports:
-      - "3002:3002"
+      - "3001:3001"
     depends_on:
       mysql_taller:
         condition: service_healthy
