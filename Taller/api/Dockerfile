@@ -20,5 +20,5 @@ RUN npm install
 COPY . .
 
 EXPOSE 3001
-# CMD [ "/bin/bash", "-c", "./wait-for-it.sh mysql_sopes:3306 -- node index.js" ]
+# CMD [ "/bin/bash", "-c", "./wait-for-it.sh mysql_taller:3306 -- npm start" ]
 CMD [ "/bin/bash", "-c", "npm start" ]

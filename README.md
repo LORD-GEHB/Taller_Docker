@@ -53,6 +53,69 @@ docker compose up                 # Levantar servicios
 docker compose down              # Detener servicios
 ```
 
+## Comandos para Ejecutar los Servicios
+
+### Base de Datos (MySQL)
+
+```bash
+# Crear volumen para persistencia de datos
+docker volume create mysql-data
+
+# Ejecutar contenedor de base de datos
+docker run -d \
+  --name DB_TALLER \
+  -p 3306:3306 \
+  -e MYSQL_ROOT_PASSWORD=taller \
+  -e MYSQL_DATABASE=taller \
+  -v mysql-data:/var/lib/mysql \
+  -v $(pwd)/database/init.sql:/docker-entrypoint-initdb.d/init.sql \
+  -v $(pwd)/database/mysql-config/auth.cnf:/etc/mysql/conf.d/auth.cnf \
+  mysql_taller:latest \
+  --default-authentication-plugin=mysql_native_password
+```
+
+**Nota**: Las siguientes configuraciones son opcionales ya que pueden estar definidas en archivos de configuración:
+- `-e MYSQL_ROOT_PASSWORD=taller`
+- `-e MYSQL_DATABASE=taller`
+- `--default-authentication-plugin=mysql_native_password`
+
+### API (Backend)
+
+```bash
+# Ejecutar contenedor de la API
+docker run -d \
+  --name API_TALLER \
+  -p 3001:3001 \
+  api_taller:latest
+```
+
+### Frontend
+
+```bash
+# Ejecutar contenedor del frontend
+docker run -d \
+  --name FRONTEND_TALLER \
+  -p 3000:3000 \
+  frontend_taller:latest
+```
+
+## Comandos Adicionales de Docker
+
+```bash
+# Acceder a terminal de contenedor
+docker exec -it <nombre_contenedor> /bin/bash
+
+# Docker Compose - Comandos completos
+docker compose build             # Construir imágenes
+docker compose up               # Levantar servicios
+docker compose stop             # Detener servicios
+docker compose down             # Detener y eliminar servicios
+
+# Gestión de imágenes en Docker Hub
+docker tag <local-image:tagname> <user/repo:tagname>
+docker push <user/repo:tagname>
+```
+
 ## Objetivos
 
 - Desarrollar una aplicación CRUD (Create, Read, Update, Delete) completa
