@@ -17,7 +17,7 @@ Este taller tiene como objetivo enseñar la creación y contenerización de una 
 
 ### Instalaciones Necesarias
 
-1. **Node.js**: [Descargar Node.js](https://nodejs.org/en/download)
+1. **Node**: [Descargar Node.js](https://nodejs.org/en/download)
 2. **Docker Engine**: [Instalar Docker Engine](https://docs.docker.com/engine/install/)
 3. **Docker Desktop**: [Instalar Docker Desktop](https://docs.docker.com/desktop/setup/install/linux/)
 
